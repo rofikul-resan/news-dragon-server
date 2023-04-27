@@ -13,6 +13,10 @@ app.get("/category", (req, res) => {
   res.send(category);
 });
 
+app.get("/news", (req, res) => {
+  res.send(news);
+});
+
 app.get("/news-category/:id", (req, res) => {
   const id = req.params.id;
   if (+id === 0) {
@@ -23,7 +27,7 @@ app.get("/news-category/:id", (req, res) => {
   }
 });
 
-app.get("/new/:id", (req, res) => {
+app.get("/news/:id", (req, res) => {
   const id = req.params.id;
   const reqNew = news.find((n) => n._id === id);
   res.send(reqNew);
